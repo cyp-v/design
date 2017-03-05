@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'perso',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,12 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+        ],
+
+        'perso' => [
+            'driver' => 'perso',
+            'root' => public_path(),
+            'visibility' => 'public',
         ],
 
     ],

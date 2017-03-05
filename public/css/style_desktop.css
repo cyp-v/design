@@ -1,0 +1,139 @@
+/*
+===== FONTS ===== 
+*/
+
+@font-face{
+	font-family: 'etna';
+	src: url('fonts/etna-free-font.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+===== GENERAL ===== 
+*/
+
+body{
+	font-family: 'etna', Arial, sans-serif;
+}
+
+/* ----- titles ----- */
+
+
+
+/* ----- links ----- */
+
+section.row{
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.framed_link{
+	display: inline-block;
+	padding-top: 1rem !important;
+	padding-bottom: 1rem !important;
+	font-size: 2rem;
+}
+
+.pink_link{
+	color: #f98686;
+	border: 5px solid #f98686;
+}
+
+.light_blue_link{
+	color: #09d3f2;
+	border: 5px solid #09d3f2;
+}
+
+/* ----- forms ----- */
+
+.input-field{
+	padding-left: 0px !important;
+	background: none !important;
+	border: none !important;
+}
+
+.input-field input[type=text], .input-field input[type=text]:focus, .input-field input[type=submit], .input-field input[type=submit]:focus{
+	border: 2px solid #fff !important;
+}
+
+.input-field input[type=text]{
+	padding-left: 5px;
+}
+
+.input-field input[type=submit]{
+	display: inline-block;
+	min-height: 100% !important;
+	height: 100% !important;
+	border: none !important;
+	font-size: 1.5rem;
+}
+
+/*
+===== HEADER ===== 
+*/
+
+header{
+	height: 100vh;
+	color: #fff;
+	padding: 30px 7.5%; 
+}
+
+nav{
+	box-shadow: none;
+}
+
+
+nav i.material-icons {
+	font-size: 2.5rem;
+}
+
+.nav-wrapper{
+	vertical-align: middle !important;
+}
+
+.nav-wrapper li a{
+	margin-top: 6px;
+}
+
+.nav-wrapper a{
+	font-size: 1.7rem;
+	line-height: 54px;
+	padding-bottom: 5px;
+}
+
+.nav-wrapper a.brand-logo{
+	font-size: 2.5rem;
+}
+
+.lead{
+	height: 100%;
+}
+
+/*
+===== CONTENT ===== 
+*/
+
+.thumbnail img{
+	width: 100%;
+}
+
+.thumbnail span.see_more{
+	font-size: 10.5vw;
+	font-family: Times;
+	width: 100%;
+}
+
+.frontpage_supports img{
+	max-height: 120px;
+}
+
+/*
+===== FOOTER ===== 
+*/
+
+footer{
+	color: #fff;
+	padding: 30px 7.5%; 
+	min-height: 200px;
+}

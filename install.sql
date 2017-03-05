@@ -9,5 +9,5 @@ CREATE DATABASE `db_design`
   DEFAULT CHARACTER SET utf8
   COLLATE utf8_unicode_ci;
 
--- création d'un utilisateur spécifique qui n'aura que des droits sur une base de données déterminée (ici db_robot)
+-- création d'un utilisateur spécifique qui n'aura que des droits sur une base de données déterminée (ici db_design)
 GRANT ALL PRIVILEGES ON `db_design`.* to 'admin'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION; 

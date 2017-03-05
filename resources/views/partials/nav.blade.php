@@ -1,9 +1,9 @@
-<nav>
+<nav class="transparent">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">partageons le design</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <a href="{{route('home')}}" class="brand-logo">partageons le design</a>
+    <ul id="nav-mobile" class="medium right hide-on-med-and-down">
       <li><a href=""><i class="material-icons left">visibility</i>les projets</a></li>
-      <li><a href=""><i class="material-icons left">system_update_alt</i>proposer un projet</a></li>
+      <li><a href=""><i class="large material-icons left">system_update_alt</i>proposer un projet</a></li>
       <li><a href="#!" class="dropdown-button" data-activates="burger_menu"><i class="material-icons">menu</i></a></li>
         <ul id="burger_menu" class="dropdown-content">
           <li><a href="#!">le design social</a></li>
