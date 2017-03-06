@@ -1,5 +1,7 @@
 <?php
 
+use App\Tag;
+use App\Project;
 use Illuminate\Database\Seeder;
 
 class ProjectsTableSeeder extends Seeder
@@ -145,5 +147,26 @@ class ProjectsTableSeeder extends Seeder
                 'project_link'		  => 'https://www.ideas-box.org',
         	]
         ]);
+        
+        Project::find(1)->tags()->attach([5, 24]);
+        Project::find(2)->tags()->attach([23, 26]);
+        Project::find(3)->tags()->attach([8, 18, 26]);
+        Project::find(4)->tags()->attach([8, 16, 18, 21]);
+        Project::find(5)->tags()->attach([13, 25]);
+        Project::find(6)->tags()->attach([1, 9, 10, 12, 13]);
+
+        Project::find(1)->pictures()->attach([1, 2, 3 ,4]);
+        Project::find(2)->pictures()->attach([5, 6, 7, 8]);
+        Project::find(3)->pictures()->attach([9, 10, 11, 12]);
+        Project::find(4)->pictures()->attach([13, 14, 15, 16]);
+        Project::find(5)->pictures()->attach([17, 18, 19, 20]);
+        Project::find(6)->pictures()->attach([21, 22, 23]);
+
+        Project::find(1)->supports()->attach([4]);
+        Project::find(2)->supports()->attach([2]);
+        Project::find(3)->supports()->attach([5]);
+        Project::find(4)->supports()->attach([2, 5]);
+        Project::find(5)->supports()->attach([3]);
+        Project::find(6)->supports()->attach([1]);
     }
 }
