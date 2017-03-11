@@ -33,6 +33,7 @@ $(document).ready(function()
 	//initialisation des input "select" 
 	$('select').material_select();
 
+	//initialisation du plugin "datepicker"
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15, // Creates a dropdown of 15 years to control year
@@ -46,5 +47,6 @@ $(document).ready(function()
   		format: 'dd/mm/yyyy', 
   		formatSubmit: 'yyyy/mm/dd'
 	});
+
 
 }); //end document.ready

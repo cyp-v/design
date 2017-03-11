@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManager;
 use App\Http\Utilities\Country;
 use Illuminate\Http\Request;
 use App\Project;

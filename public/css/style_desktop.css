@@ -98,6 +98,14 @@ label:not(.label-icon).active {
     transform: translateY(-170%) !important;
 }
 
+.file-path-wrapper label{
+	padding-left: 10.5%;
+}
+
+label[for="support_links"]{
+	padding-left: 18.5%;
+}
+
 [type=checkbox]+label:before, [type=checkbox]:not(.filled-in)+label:after{
 	border: 2px solid #fff;
 }
@@ -124,8 +132,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 	color: rgba(255, 255, 255, .8) !important;
 }
 
+input#supports{
+	margin-top: 14px;
+}
+
 .input-field input[type=submit]{
-	display: inline-block;
 	min-height: 100% !important;
 	height: 100% !important;
 	border: none !important;
@@ -157,6 +168,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
     font-size: inherit; 
 }
 
+.file-field{
+	padding-right: 0px !important;
+}
+
 .dropdown-content li>span {
 	color: #0097a7;
 }
@@ -164,6 +179,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 span.character-counter{
 	float: none !important;
 	margin: 0 0 0 10px;
+}
+
+span.compulsory{
+	font-size: 1.8rem;
 }
 
 /* ----- plugin Datepicker ----- */
