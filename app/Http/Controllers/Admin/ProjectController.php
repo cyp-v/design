@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Utilities\Country;
 use Illuminate\Http\Request;
+use App\Project;
+use App\User;
+use App\Tag;
+use Auth;
 
 class ProjectController extends Controller
 {
@@ -13,7 +19,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $projects = Project::paginate(5);
+
+        return view('back.admin_projects', compact('user', 'projects'));
     }
 
     /**
@@ -21,9 +30,13 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+        $this->authorize('create', Project::class);
+        $user = Auth::user();
+        $tags = Tag::all()->pluck('title', 'id');
+
+        return view('back.project.project_create', compact('user', 'tags'));
     }
 
     /**
@@ -32,9 +45,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request, Project $project)
     {
-        //
+        $this->authorize('update', $project);
     }
 
     /**
@@ -43,9 +56,13 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project, $id)
     {
-        //
+        $this->authorize('view', $project);
+
+        $project = Project::find($id);
+
+        return view('back.project.project_overview', compact('project', 'picture'));
     }
 
     /**
@@ -54,9 +71,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Project $project)
     {
-        //
+        $this->authorize('update', $project);
     }
 
     /**
@@ -66,9 +83,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, Project $project)
     {
-        //
+        $this->authorize('update', $project);
     }
 
     /**
@@ -77,8 +94,8 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project)
     {
-        //
+        $this->authorize('delete', $project);
     }
 }

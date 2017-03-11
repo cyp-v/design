@@ -17,9 +17,16 @@ body{
 	font-family: 'etna', Arial, sans-serif;
 }
 
-/* ----- titles ----- */
+.full_height{
+	height: 100%;
+}
 
+/* ----- buttons ----- */
 
+.btn, .btn-flat{
+	padding: 0 1rem;
+	text-transform: lowercase;
+}
 
 /* ----- links ----- */
 
@@ -45,20 +52,76 @@ section.row{
 	border: 5px solid #09d3f2;
 }
 
+.lowercase{
+	text-transform: lowercase !important;
+}
+
+/* ----- images ----- */
+
+.profile_picture{
+	max-width: 140px;
+	border-radius: 50%;
+}
+
+/* ----- pagination ----- */
+
+.pagination li{
+	vertical-align: middle;
+    height: 2rem;
+}
+
+.pagination li a{
+	font-size: 1rem !important;
+	line-height: 1.5rem !important;
+}
+
+/* ----- tables ----- */
+
+.table_picture{
+	max-width: 100px;
+}
+
+td{
+	padding: 5px;
+}
+
 /* ----- forms ----- */
 
-.input-field{
-	padding-left: 0px !important;
-	background: none !important;
-	border: none !important;
+label{
+	padding-left: 10px;
+	color: #fff !important;
 }
 
-.input-field input[type=text], .input-field input[type=text]:focus, .input-field input[type=submit], .input-field input[type=submit]:focus{
+label:not(.label-icon).active {
+    font-size: .8rem;
+    -webkit-transform: translateY(-170%) !important;
+    transform: translateY(-170%) !important;
+}
+
+[type=checkbox]+label:before, [type=checkbox]:not(.filled-in)+label:after{
+	border: 2px solid #fff;
+}
+
+[type=checkbox]:checked+label:before{
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+input, textarea, select{
 	border: 2px solid #fff !important;
+	padding-left: 10px !important;
+	background-color: transparent;
+	margin-bottom: 20px;
 }
 
-.input-field input[type=text]{
-	padding-left: 5px;
+textarea{
+	height: initial;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+	color: rgba(255, 255, 255, .8) !important;
 }
 
 .input-field input[type=submit]{
@@ -69,12 +132,85 @@ section.row{
 	font-size: 1.5rem;
 }
 
+.input_link{
+	height: 2.5rem;
+	line-height: 3rem;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.select-wrapper{
+	padding-left: 0 !important;
+}
+
+.select-wrapper+label{
+	top: -17px;
+}
+
+.select-wrapper span.caret {
+    color: inherit; 
+    position: absolute;
+    right: 0;
+    top: 25%; 
+    height: inherit;
+    margin: 0 10px 0 0;
+    font-size: inherit; 
+}
+
+.dropdown-content li>span {
+	color: #0097a7;
+}
+
+span.character-counter{
+	float: none !important;
+	margin: 0 0 0 10px;
+}
+
+/* ----- plugin Datepicker ----- */
+
+.picker__box {
+	border: none;
+}
+
+.picker__date-display{
+	background-color: #00b8d4;
+}
+
+.picker__weekday-display{
+	background-color: #0097a7;
+}
+
+.picker__today, .picker__close{
+	color: #0097a7;
+}
+
+/*----- colors -----*/
+
+.g-b_gradient{
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#09ea98), to(#00b8d4));
+}
+
+.g-b_gradient_reverse{
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00b8d4), to(#09ea98));
+}
+
+/*
+===== MODAL WINDOW ===== 
+*/
+
+.modal-overlay{
+	opacity: .8 !important;
+}
+
+.modal-content{
+	padding: 0px !important;
+}
+
 /*
 ===== HEADER ===== 
 */
 
 header{
-	height: 100vh;
 	color: #fff;
 	padding: 30px 7.5%; 
 }
@@ -83,6 +219,13 @@ nav{
 	box-shadow: none;
 }
 
+.lead{
+	height: 82vh;
+}
+
+.admin_lead{
+	height: 10vh;
+}
 
 nav i.material-icons {
 	font-size: 2.5rem;
@@ -104,10 +247,6 @@ nav i.material-icons {
 
 .nav-wrapper a.brand-logo{
 	font-size: 2.5rem;
-}
-
-.lead{
-	height: 100%;
 }
 
 /*
@@ -135,5 +274,5 @@ nav i.material-icons {
 footer{
 	color: #fff;
 	padding: 30px 7.5%; 
-	min-height: 200px;
+	min-height: 100px;
 }

@@ -44,4 +44,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Project::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->role === 'administrator';
+    }
+
+    public function isAuthor()
+    {
+        return $this->role === 'author';
+    }
 }

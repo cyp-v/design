@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Project extends Model
 {
@@ -17,6 +18,7 @@ class Project extends Model
     'country',
     'population',
     'progression',
+    'progression_details',
     'starting_date',
     'context',
     'brief',
@@ -28,7 +30,7 @@ class Project extends Model
     'project_link'
   ];
 
-  public function users()
+  public function user()
   {
 	  return $this->belongsTo(User::class);
   }
@@ -47,4 +49,16 @@ class Project extends Model
  	{
  		return $this->belongsToMany(Support::class);
  	}
+
+  public function getPublishedAtAttribute($date)
+  {
+      return Carbon::parse($date)->format('d/m/Y');
+  }
+
+  public function setPublishedAtAttribute($value)
+  {
+    ($value == 'on') ? 
+      $this->attributes['published_at'] = Carbon::now() : 
+      $this->attributes['published_at'] = null;
+  }
 }

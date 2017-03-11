@@ -8,15 +8,17 @@ use App\Project;
 use App\Topic;
 use App\User;
 use App\Tag;
+use Auth;
 
 class FrontController extends Controller
 {
     public function index() //page d'accueil
     {
+        $user = Auth::user();
     	$topics = DB::table('topics')->where('status', 'published')->latest()->limit(7)->get();
     	$projects = DB::table('projects')->where('status', 'published')->latest()->limit(3)->get();
 
-    	return view('front.index', compact('topics', 'projects'));
+    	return view('front.index', compact('user', 'topics', 'projects'));
     }
 
     public function showSocialDesign() //page "le design social"
@@ -63,10 +65,36 @@ class FrontController extends Controller
     	return view('front.project_single', ['project' =>$project]);
     }
 
-    public function showProjectsByTag($id)
+    public function showProjectsByTag($id) //page du tag sélectionné
     {
     	$tag = Tag::find($id);
-    	$name = $tag->name->where
-    	// $projects = DB::table('projects')->where('status', 'published')->latest()->limit(4)->get();
+    	$title = $tag->title;
+        $projects = $tag->projects()->where('status', 'published')->latest()->get();
+        
+        return view('front.projects_tag', compact('title', 'projects')); 
+    }
+
+    public function showProjectsByUser($id) //page des projets de l'auteur sélectionné
+    {
+        $user = User::find($id);
+        $name = $user->name;
+        $projects = $user->projects()->where('status', 'published')->latest()->get();
+
+        return view('front.projects_user', compact('name', 'projects'));
+    }
+
+    public function showAssociation() //page "l'association"
+    {
+        return view('front.organisation');
+    }
+
+    public function showGetInvolved() //page "vous impliquer"
+    {
+        return view('front.get_involved');
+    }
+
+    public function showContact() //page "contact"
+    {   
+        return view('front.contact');
     }
 }

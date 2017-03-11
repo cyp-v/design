@@ -29,9 +29,11 @@ Route::get('/project/{id}', 'FrontController@showProjectById')->name('project_si
 
 Route::get('/tag/{id}', 'FrontController@showProjectsByTag')->name('projects_tag');
 
+Route::get('/user/{id}', 'FrontController@showProjectsByUser')->name('projects_user');
+
 Route::get('/association', 'FrontController@showAssociation')->name('association');
 
-Route:: get('/get_involved', 'FrontController@showGetInvolved')->name('get_involved');
+Route::get('/get_involved', 'FrontController@showGetInvolved')->name('get_involved');
 
 Route::get('/contact', 'FrontController@showContact')->name('contact');
 

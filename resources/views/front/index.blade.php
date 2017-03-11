@@ -3,12 +3,14 @@
 @section('title', 'Home')
 
 @section('lead_content')
+<div class="container lead valign-wrapper">
 	<div class="row">
 		<h2 class="center-align">redessinons le quotidien de ceux qui en ont le plus besoin</h2>
 		<div>
 			<i class="large material-icons col l1 offset-l5">replay</i>
 		</div>
 	</div>
+</div>
 @endsection
 
 @section('content')
@@ -21,7 +23,7 @@
 		<h5>les actus</h5>
 		@foreach ($topics as $topic)
 			<div class="thumbnail col l3">
-				<a href=""><img src="{{ url('img/projets_and_topics/thumbnails', $topic->thumbnail_link) }}" alt="news thumbnail image"></a>
+				<a href="{{ route('topic_single', $topic->id) }}"><img src="{{ url('img/projets_and_topics/thumbnails', $topic->thumbnail_link) }}" alt="news thumbnail image"></a>
 			</div>
 		@endforeach
 		<div class="thumbnail col l3 valign-wrapper">
@@ -33,7 +35,7 @@
 		<h5>projets à la une</h5>
 		@foreach ($projects as $project)
 			<div class="thumbnail col l3">
-				<a href=""><img src="{{ url('img/projets_and_topics/thumbnails', $project->thumbnail_link) }}" alt="project thumbnail image"></a>
+				<a href="{{ route('project_single', $project->id) }}"><img src="{{ url('img/projets_and_topics/thumbnails', $project->thumbnail_link) }}" alt="project thumbnail image"></a>
 			</div>
 		@endforeach
 	<div class="thumbnail col l3 valign-wrapper">
@@ -44,7 +46,7 @@
 	<section class="row">
 		<h2>notre association se donne pour mission de promouvoir l'étude et la pratique du design social.</h2>
 		<div class="row">
-			<a href="" class="framed_link pink_link col l4 offset-l4 center-align">en savoir plus</a>
+			<a href="{{ route('association') }}" class="framed_link pink_link col l4 offset-l4 center-align">en savoir plus</a>
 		</div>
 	</section>
 
@@ -52,7 +54,7 @@
 		<h2>designers, architetes, bénévoles...<br>
 		venez découvrir comment soutenir le design social.</h2>
 		<div class="row">
-			<a href="" class="framed_link light_blue_link col l4 offset-l4 center-align">ça m'intéresse</a>
+			<a href="{{ route('get_involved') }}" class="framed_link light_blue_link col l4 offset-l4 center-align">ça m'intéresse</a>
 		</div>
 	</section>
 
@@ -64,7 +66,6 @@
 			<a href="" class="col l3"><img src="{{ url('img/supports_thumbnails/mexico.png') }}" alt=""></a>
 			<a href="" class="col l3"><img src="{{ url('img/supports_thumbnails/strate.jpg') }}" alt=""></a>
 		</div>
-
 	</section>
 
 @endsection

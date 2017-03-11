@@ -2,6 +2,7 @@
 
 use App\Tag;
 use App\Project;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ProjectsTableSeeder extends Seeder
@@ -20,7 +21,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 	  	 	  => 'Tisserandes du Guatémala',
         		'excerpt' 	 	 	  => 'Projet Tisserandes du Guatémala par Design Without Borders',
         		'status' 	  	 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective'   	 	  => 'Améliorer la production des tisserandes du Guatemala',
         		'country' 	  	 	  => 'Guatemala',
         		'population'  	 	  => 'coopérative d\'artisanes maya',
@@ -35,6 +36,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link' 	  => 'tisserandes_du_guatemala.jpg',
         		'video_link'          => '',
                 'project_link'		  => 'http://www.norskform.no',
+                'created_at'          => Carbon::now()
         	],
         	[
         		'user_id' 		 	  => 2,
@@ -42,7 +44,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 		 	  => 'BePro motorcycle helmet',
         		'excerpt' 		 	  => 'Projet BePro motorcycle helmet par Design Without Borders',
         		'status' 		 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective' 	 	  => 'Sécuriser la pratique de la moto en Ouganda',
         		'country' 		 	  => 'Ouganda',
         		'population' 	 	  => 'Les motocyclistes et notamment les taxis-motos et leurs passagers',
@@ -57,6 +59,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link'	  => 'bepro_motorcycle_helmet.jpg',
         		'video_link'          => '',
                 'project_link'		  => 'www.norskform.no',
+                'created_at'          => Carbon::now()
         	],
         	[
         		'user_id' 		 	  => 3,
@@ -64,7 +67,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 		 	  => 'Mobilier pour prison',
         		'excerpt' 		 	  => 'Projet de mobilier de prison par Bernard Moïse',
         		'status' 		 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective' 	 	  => 'Améliorer les conditions de vie des détenus',
         		'country' 		 	  => 'France',
         		'population' 	 	  => 'Détenus des prisons',
@@ -79,6 +82,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link'	  => 'mobilier_pour_prison.jpg',
                 'video_link'          => '',
                 'project_link'        => '',
+                'created_at'          => Carbon::now()
         	],
         	[
         		'user_id' 		 	  => 4,
@@ -86,7 +90,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 		 	  => 'Mobilier composite en jute',
         		'excerpt' 		 	  => 'Projet de mobilier composite en jute par Joran Briand',
         		'status' 		 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective' 	 	  => 'Diversifier les utilisations du jute',
         		'country' 		 	  => 'Bangladesh',
         		'population' 	 	  => 'Paysans producteurs de jute et petits industriels locaux',
@@ -101,6 +105,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link'	  => 'mobilier_composite_en_jute.jpg',
         		'video_link'          => '',
                 'project_link'		  => 'http://www.trustindesign.com',
+                'created_at'          => Carbon::now()
         	],
         	[
         		'user_id' 		 	  => 4,
@@ -108,7 +113,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 		 	  => 'See better to learn better',
         		'excerpt' 		 	  => 'Projet See better to learn better par l\'agence de design Fuse Project',
         		'status' 		 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective' 	 	  => 'Améliorer la vue des écoliers pour qu\'ils apprennent mieux',
         		'country' 		 	  => 'Mexique',
         		'population' 	 	  => 'Ecoliers, collégiens',
@@ -123,6 +128,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link'	  => 'see_better_to_learn_better.jpg',
         		'video_link'          => '',
                 'project_link'		  => 'http://www.fuseproject.com/products-45',
+                'created_at'          => Carbon::now()
         	],
         	[
         		'user_id' 		 	  => 3,
@@ -130,7 +136,7 @@ class ProjectsTableSeeder extends Seeder
         		'title' 		 	  => 'Médiathèque en kit Ideas Box',
         		'excerpt' 		 	  => 'Projet Ideas Box par Philippe Starck',
         		'status' 		 	  => 'published',
-                'published_at'        => NULL,
+                'published_at'        => Carbon::now(),
         		'objective' 	 	  => 'Apporter des biens culturels à ceux qui n\'en ont pas',
                 'country'             => '',
         		'population' 	 	  => 'Populations en situation d\'urgence humanitaire ou de grande précarité',
@@ -145,6 +151,7 @@ class ProjectsTableSeeder extends Seeder
         		'thumbnail_link'	  => 'ideas_box.jpg',
         		'video_link'          => '',
                 'project_link'		  => 'https://www.ideas-box.org',
+                'created_at'          => Carbon::now()
         	]
         ]);
         
